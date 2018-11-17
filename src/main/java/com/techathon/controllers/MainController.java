@@ -17,10 +17,10 @@ public class MainController {
 
         int number = 0;
 
-        for(int i = 0; i < 1000000000; i++){
+        for(int i = 0; i < 100000; i++){
             number += string.hashCode();
             number %= 100000000;
-            for(int j = 0; j < 1000000000; j++){
+            for(int j = 0; j < 100000; j++){
                 number += string.hashCode();
                 number %= 100000000;
 //                for(int k = 0; k < 1000000000; k++){
