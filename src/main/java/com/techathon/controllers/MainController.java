@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value = "/main")
+@RequestMapping(value = "/")
 public class MainController {
 
     @RequestMapping(value = "/crypt", method = RequestMethod.GET)
@@ -23,6 +23,15 @@ public class MainController {
         }
 
         map.put("response", number);
+        map.put("status", HttpStatus.ACCEPTED);
+
+        return map;
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Object> main(){
+        Map<String, Object> map = new HashMap<>();
         map.put("status", HttpStatus.ACCEPTED);
 
         return map;
