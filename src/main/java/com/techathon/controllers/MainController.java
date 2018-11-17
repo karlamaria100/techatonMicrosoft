@@ -17,9 +17,17 @@ public class MainController {
 
         int number = 0;
 
-        for(int i = 0; i < 10000; i++){
+        for(int i = 0; i < 1000000000; i++){
             number += string.hashCode();
             number %= 100000000;
+            for(int j = 0; j < 1000000000; j++){
+                number += string.hashCode();
+                number %= 100000000;
+//                for(int k = 0; k < 1000000000; k++){
+//                    number += string.hashCode();
+//                    number %= 100000000;
+//                }
+            }
         }
 
         map.put("response", number);
@@ -30,7 +38,7 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     @ResponseBody
-    public Map<String, Object> main(){
+    public Map<String, Object> mainRequest(){
         Map<String, Object> map = new HashMap<>();
         map.put("status", HttpStatus.ACCEPTED);
 
